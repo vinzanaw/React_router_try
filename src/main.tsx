@@ -5,10 +5,17 @@ import "./index.css"
 import App from "./App.tsx"
 import { ThemeProvider } from "@/components/theme-provider.tsx"
 
+import { BrowserRouter } from "react-router-dom"
+import { CartProvider } from "./logika/cart.tsx"
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider>
-      <App />
+      <BrowserRouter>
+      <CartProvider>
+        <App />
+        </CartProvider>
+      </BrowserRouter>
     </ThemeProvider>
   </StrictMode>
 )
